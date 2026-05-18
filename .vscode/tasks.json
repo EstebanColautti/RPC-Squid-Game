@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build all",
+      "type": "shell",
+      "command": "make all",
+      "group": "build",
+      "problemMatcher": "$gcc"
+    },
+    {
+      "label": "Run automatic demo",
+      "type": "shell",
+      "command": "make all && ./build/demo",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run concurrent demo",
+      "type": "shell",
+      "command": "make all && ./build/concurrent_demo",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run server",
+      "type": "shell",
+      "command": "make all && ./build/server 5050 10 90",
+      "problemMatcher": []
+    }
+  ]
+}
