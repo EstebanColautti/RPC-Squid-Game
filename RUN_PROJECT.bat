@@ -11,7 +11,7 @@ echo 2. Concurrent demo
 echo 3. Manual server + two clients
 echo 4. Exit
 echo.
-set /p option=Choose an option: 
+set /p option=Choose an option:
 if "%option%"=="1" build\demo.exe & pause & goto menu
 if "%option%"=="2" build\concurrent_demo.exe & pause & goto menu
 if "%option%"=="3" goto manual

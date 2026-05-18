@@ -131,7 +131,7 @@ int rpc_server_start(const RpcServerConfig *config) {
     }
 
     memset(&g_game, 0, sizeof(g_game));
-    game_initialize(&g_game, steps, duration, seed);
+    game_initlize(&g_game, steps, duration, seed);
 
     g_server_socket = net_create_server(port);
     if (g_server_socket == INVALID_SOCKET_VALUE) {

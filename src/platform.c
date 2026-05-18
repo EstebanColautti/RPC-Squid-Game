@@ -148,7 +148,7 @@ void thread_join(thread_t thread) {
 
 void mutex_init(mutex_t *mutex) {
 #ifdef _WIN32
-    InitializeCriticalSection(mutex);
+    InitlizeCriticalSection(mutex);
 #else
     pthread_mutex_init(mutex, NULL);
 #endif

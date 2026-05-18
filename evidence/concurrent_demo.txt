@@ -1,0 +1,66 @@
+Starting local RPC server for concurrent demo...
+RPC Squid Game server running on port 5052
+Program=0x31234567 Version=1 Steps=10 Duration=60s
+[P1] P1 joined the game with id #1.
+[P2] P2 joined the game with id #2.
+[P3] P3 joined the game with id #3.
+[P4] P4 joined the game with id #4.
+[P5] P5 joined the game with id #5.
+[P6] P6 joined the game with id #6.
+[P1] P1 entered bridge 1.
+[P7] P7 joined the game with id #7.
+[P8] P8 joined the game with id #8.
+[P2] P2 entered bridge 2.
+[P3] P3 entered bridge 3.
+[P4] P4 entered bridge 1.
+[P5] P5 entered bridge 2.
+[P6] P6 entered bridge 3.
+[P7] P7 entered bridge 1.
+[P8] P8 entered bridge 2.
+[P1] P1 jumped to bridge 1 step 1. The step was strong.
+[P2] P2 jumped to bridge 2 step 2. The step was strong.
+[P3] P3 jumped to bridge 3 step 1. The step was weak and broke. The player died.
+[P4] A player is ahead on this bridge, so this player must wait.
+[P1] P1 jumped to bridge 1 step 3. The step was strong.
+[P5] A player is ahead on this bridge, so this player must wait.
+[P2] P2 jumped to bridge 2 step 3. The step was weak and broke. The player died.
+[P6] P6 jumped to bridge 3 step 2. The step was strong.
+[P7] A player is ahead on this bridge, so this player must wait.
+[P1] P1 jumped to bridge 1 step 4. The step was strong.
+[P8] P8 jumped to bridge 2 step 2. The step was strong.
+[P4] A player is ahead on this bridge, so this player must wait.
+[P1] P1 jumped to bridge 1 step 6. The step was strong.
+[P1] P1 jumped to bridge 1 step 7. The step was strong.
+[P5] A player is ahead on this bridge, so this player must wait.
+[P6] P6 jumped to bridge 3 step 3. The step was strong.
+[P4] A player is ahead on this bridge, so this player must wait.
+[P7] A player is ahead on this bridge, so this player must wait.
+[P8] P8 jumped to bridge 2 step 3. The step was weak and broke. The player died.
+[P5] P5 jumped to bridge 2 step 1. The step was strong.
+[P4] A player is ahead on this bridge, so this player must wait.
+[P6] P6 jumped to bridge 3 step 5. The step was strong.
+[P7] A player is ahead on this bridge, so this player must wait.
+[P4] A player is ahead on this bridge, so this player must wait.
+[P5] P5 jumped to bridge 2 step 3. The step was weak and broke. The player died.
+[P6] P6 jumped to bridge 3 step 6. The step was strong.
+[P7] A player is ahead on this bridge, so this player must wait.
+[P6] P6 jumped to bridge 3 step 8. The step was strong.
+[P7] A player is ahead on this bridge, so this player must wait.
+
+=== FINAL CONCURRENT STATE ===
+Current visible game state.
+player=0 bridge=0 position=0 alive=0 finished=0 survivors=0 clock=59 move_seq=17
+Clock: 59s | Survivors: 0 | Move sequence: 17
+Bridge 1: [S][?][S][S][?][S][S][?][?][?]
+Bridge 2: [S][S][X][?][?][?][?][?][?][?]
+Bridge 3: [X][S][S][?][S][S][?][S][?][?]
+Players:
+  #1 P1 | bridge=1 | position=7 | alive
+  #2 P2 | bridge=2 | position=3 | dead
+  #3 P3 | bridge=3 | position=1 | dead
+  #4 P4 | bridge=1 | position=0 | alive
+  #5 P5 | bridge=2 | position=3 | dead
+  #6 P6 | bridge=3 | position=8 | alive
+  #7 P7 | bridge=1 | position=0 | alive
+  #8 P8 | bridge=2 | position=3 | dead
+RPC Squid Game server stopped.

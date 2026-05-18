@@ -1,0 +1,202 @@
+Starting local RPC server for automatic demo...
+RPC Squid Game server running on port 5051
+Program=0x31234567 Version=1 Steps=10 Duration=90s
+
+=== JOIN ===
+Gi-hun joined the game with id #1.
+player=1 bridge=0 position=0 alive=1 finished=0 survivors=0 clock=90 move_seq=0
+Clock: 90s | Survivors: 0 | Move sequence: 0
+Bridge 1: [?][?][?][?][?][?][?][?][?][?]
+Bridge 2: [?][?][?][?][?][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=0 | position=0 | alive
+
+=== CHOOSE ===
+Gi-hun entered bridge 2.
+player=1 bridge=2 position=0 alive=1 finished=0 survivors=0 clock=89 move_seq=0
+Clock: 89s | Survivors: 0 | Move sequence: 0
+Bridge 1: [?][?][?][?][?][?][?][?][?][?]
+Bridge 2: [?][?][?][?][?][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=0 | alive
+
+=== JOIN ===
+Ali joined the game with id #2.
+player=2 bridge=0 position=0 alive=1 finished=0 survivors=0 clock=89 move_seq=0
+Clock: 89s | Survivors: 0 | Move sequence: 0
+Bridge 1: [?][?][?][?][?][?][?][?][?][?]
+Bridge 2: [?][?][?][?][?][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=0 | alive
+  #2 Ali | bridge=0 | position=0 | alive
+
+=== CHOOSE ===
+Ali entered bridge 2.
+player=2 bridge=2 position=0 alive=1 finished=0 survivors=0 clock=89 move_seq=0
+Clock: 89s | Survivors: 0 | Move sequence: 0
+Bridge 1: [?][?][?][?][?][?][?][?][?][?]
+Bridge 2: [?][?][?][?][?][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=0 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+
+=== JOIN ===
+Sae-byeok joined the game with id #3.
+player=3 bridge=0 position=0 alive=1 finished=0 survivors=0 clock=89 move_seq=0
+Clock: 89s | Survivors: 0 | Move sequence: 0
+Bridge 1: [?][?][?][?][?][?][?][?][?][?]
+Bridge 2: [?][?][?][?][?][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=0 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=0 | position=0 | alive
+
+=== CHOOSE ===
+Sae-byeok entered bridge 1.
+player=3 bridge=1 position=0 alive=1 finished=0 survivors=0 clock=89 move_seq=0
+Clock: 89s | Survivors: 0 | Move sequence: 0
+Bridge 1: [?][?][?][?][?][?][?][?][?][?]
+Bridge 2: [?][?][?][?][?][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=0 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=0 | alive
+
+=== GI-HUN MOVE 1 ===
+Gi-hun jumped to bridge 2 step 1. The step was strong.
+player=1 bridge=2 position=1 alive=1 finished=0 survivors=0 clock=89 move_seq=1
+Clock: 89s | Survivors: 0 | Move sequence: 1
+Bridge 1: [?][?][?][?][?][?][?][?][?][?]
+Bridge 2: [S][?][?][?][?][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=1 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=0 | alive
+
+=== GI-HUN MOVE 2 ===
+Gi-hun jumped to bridge 2 step 2. The step was strong.
+player=1 bridge=2 position=2 alive=1 finished=0 survivors=0 clock=89 move_seq=2
+Clock: 89s | Survivors: 0 | Move sequence: 2
+Bridge 1: [?][?][?][?][?][?][?][?][?][?]
+Bridge 2: [S][S][?][?][?][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=2 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=0 | alive
+
+=== ALI MUST WAIT ===
+A player is ahead on this bridge, so this player must wait.
+player=2 bridge=2 position=0 alive=1 finished=0 survivors=0 clock=89 move_seq=2
+Clock: 89s | Survivors: 0 | Move sequence: 2
+Bridge 1: [?][?][?][?][?][?][?][?][?][?]
+Bridge 2: [S][S][?][?][?][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=2 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=0 | alive
+
+=== SAE-BYEOK TESTS WEAK STEP ===
+Sae-byeok jumped to bridge 1 step 2. The step was weak and broke. The player died.
+player=3 bridge=1 position=2 alive=0 finished=0 survivors=0 clock=89 move_seq=3
+Clock: 89s | Survivors: 0 | Move sequence: 3
+Bridge 1: [?][X][?][?][?][?][?][?][?][?]
+Bridge 2: [S][S][?][?][?][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=2 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=2 | dead
+
+=== GI-HUN JUMPS OVER WEAK STEP ===
+Gi-hun jumped to bridge 2 step 4. The step was strong.
+player=1 bridge=2 position=4 alive=1 finished=0 survivors=0 clock=89 move_seq=4
+Clock: 89s | Survivors: 0 | Move sequence: 4
+Bridge 1: [?][X][?][?][?][?][?][?][?][?]
+Bridge 2: [S][S][?][S][?][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=4 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=2 | dead
+
+=== GI-HUN MOVE 5 ===
+Gi-hun jumped to bridge 2 step 5. The step was strong.
+player=1 bridge=2 position=5 alive=1 finished=0 survivors=0 clock=89 move_seq=5
+Clock: 89s | Survivors: 0 | Move sequence: 5
+Bridge 1: [?][X][?][?][?][?][?][?][?][?]
+Bridge 2: [S][S][?][S][S][?][?][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=5 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=2 | dead
+
+=== GI-HUN JUMPS OVER STEP 6 ===
+Gi-hun jumped to bridge 2 step 7. The step was strong.
+player=1 bridge=2 position=7 alive=1 finished=0 survivors=0 clock=89 move_seq=6
+Clock: 89s | Survivors: 0 | Move sequence: 6
+Bridge 1: [?][X][?][?][?][?][?][?][?][?]
+Bridge 2: [S][S][?][S][S][?][S][?][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=7 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=2 | dead
+
+=== GI-HUN MOVE 8 ===
+Gi-hun jumped to bridge 2 step 8. The step was strong.
+player=1 bridge=2 position=8 alive=1 finished=0 survivors=0 clock=89 move_seq=7
+Clock: 89s | Survivors: 0 | Move sequence: 7
+Bridge 1: [?][X][?][?][?][?][?][?][?][?]
+Bridge 2: [S][S][?][S][S][?][S][S][?][?]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=8 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=2 | dead
+
+=== GI-HUN MOVE 10 ===
+Gi-hun jumped to bridge 2 step 10. The step was strong.
+player=1 bridge=2 position=10 alive=1 finished=0 survivors=0 clock=89 move_seq=8
+Clock: 89s | Survivors: 0 | Move sequence: 8
+Bridge 1: [?][X][?][?][?][?][?][?][?][?]
+Bridge 2: [S][S][?][S][S][?][S][S][?][S]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=10 | alive
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=2 | dead
+
+=== GI-HUN REACHES SIDE B ===
+Gi-hun reached Side B and survived.
+player=1 bridge=2 position=11 alive=1 finished=1 survivors=1 clock=89 move_seq=9
+Clock: 89s | Survivors: 1 | Move sequence: 9
+Bridge 1: [?][X][?][?][?][?][?][?][?][?]
+Bridge 2: [S][S][?][S][S][?][S][S][?][S]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=11 | finished
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=2 | dead
+
+=== FINAL STATE ===
+Current visible game state.
+player=1 bridge=2 position=11 alive=1 finished=1 survivors=1 clock=89 move_seq=9
+Clock: 89s | Survivors: 1 | Move sequence: 9
+Bridge 1: [?][X][?][?][?][?][?][?][?][?]
+Bridge 2: [S][S][?][S][S][?][S][S][?][S]
+Bridge 3: [?][?][?][?][?][?][?][?][?][?]
+Players:
+  #1 Gi-hun | bridge=2 | position=11 | finished
+  #2 Ali | bridge=2 | position=0 | alive
+  #3 Sae-byeok | bridge=1 | position=2 | dead
+RPC Squid Game server stopped.

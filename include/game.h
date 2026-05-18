@@ -49,7 +49,7 @@ typedef struct {
     int mutex_ready;
 } GameState;
 
-void game_initialize(GameState *game, int steps, int duration_seconds, unsigned int seed);
+void game_initlize(GameState *game, int steps, int duration_seconds, unsigned int seed);
 void game_destroy(GameState *game);
 void game_join(GameState *game, const char *name, RpcResponse *response);
 void game_choose_bridge(GameState *game, uint32_t player_id, int bridge, RpcResponse *response);

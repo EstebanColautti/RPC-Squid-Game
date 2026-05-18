@@ -132,7 +132,7 @@ static int any_player_ahead_unlocked(GameState *game, const Player *player) {
     return 0;
 }
 
-void game_initialize(GameState *game, int steps, int duration_seconds, unsigned int seed) {
+void game_initlize(GameState *game, int steps, int duration_seconds, unsigned int seed) {
     int bridge;
     int step;
 
@@ -399,7 +399,7 @@ void game_get_state(GameState *game, uint32_t player_id, RpcResponse *response) 
 
 void game_reset(GameState *game, int steps, int duration_seconds, unsigned int seed, RpcResponse *response) {
     rpc_response_clear(response);
-    game_initialize(game, steps, duration_seconds, seed);
+    game_initlize(game, steps, duration_seconds, seed);
     mutex_lock(&game->mutex);
     response->status = RPC_STATUS_OK;
     safe_copy(response->message, RPC_MESSAGE_SIZE, "The game was reset.");

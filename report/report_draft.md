@@ -2,9 +2,9 @@
 
 ## Introduction
 
-This project implements the RPC Squid Game glass bridge challenge using the C programming language. The system follows a client-server architecture where the server owns the authoritative game state and the clients interact with it through remote procedure calls.
+This project implements the RPC Squid Game glass bridge challenge using a client-server architecture. The server owns the authoritative game state and the clients interact with it through remote procedure calls.
 
-The implementation uses a custom RPC layer over TCP sockets. Each operation is modeled as a remote procedure: joining the game, choosing a bridge, moving, and requesting the current state. This keeps the client code close to the idea of calling a local function while the communication is actually performed over the network.
+Each operation is modeled as a remote procedure: joining the game, choosing a bridge, moving, and requesting the current state. This keeps the client logic simple while the communication is performed through the network.
 
 ## Problem Description
 
@@ -34,8 +34,6 @@ The client side has stub functions such as `rpc_join_player`, `rpc_choose_bridge
 The server side has a dispatcher that receives the procedure number from the RPC header and calls the correct game function. Each request is handled by a worker thread, while shared game state is protected by a mutex.
 
 ## Execution Example
-
-The project includes an automatic demo and a concurrent demo.
 
 Recommended command:
 
@@ -67,17 +65,4 @@ Race conditions could appear when two players move at nearly the same time, when
 
 ## Conclusion
 
-The final system satisfies the glass bridge challenge with a C-based RPC client-server architecture. The implementation demonstrates remote procedure calls, server-side state authority, concurrent client handling, transaction identifiers, serialized request and response payloads, and protected access to shared game data.
-
-## Client and Server Code
-
-The complete source code is included in the project folder under `src/` and `include/`. The most relevant files are:
-
-- `src/server_main.c`
-- `src/client_main.c`
-- `src/rpc_server.c`
-- `src/rpc_client.c`
-- `src/game.c`
-- `src/rpc_protocol.c`
-- `include/rpc_protocol.h`
-- `rpc_interface/squid_game.x`
+The final system satisfies the glass bridge challenge with an RPC client-server architecture. The implementation demonstrates remote procedure calls, server-side state authority, concurrent client handling, transaction identifiers, serlized request and response payloads, and protected access to shared game data.

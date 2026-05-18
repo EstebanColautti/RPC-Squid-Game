@@ -1,34 +1,34 @@
 # RPC Squid Game: The Glass Bridge
 
-Proyecto completo en C para VSCode. Implementa una simulación cliente-servidor con estilo RPC sobre TCP sockets. El cliente invoca procedimientos remotos y el servidor mantiene el estado autoritativo del juego.
+Proyecto en C que implementa una simulación cliente-servidor con estilo RPC sobre sockets TCP. El cliente solicita procedimientos remotos y el servidor mantiene el estado principal del juego.
 
-## Qué incluye
+## Contenido
 
-- Servidor RPC en C.
-- Cliente interactivo en C.
+- Servidor RPC.
+- Cliente interactivo.
 - Demo automática.
-- Demo concurrente con varios clientes al mismo tiempo.
-- Protocolo RPC propio con encabezado, número de programa, versión, número de procedimiento y XID.
-- Serialización en orden de red, similar al propósito de XDR.
-- Archivo `rpc_interface/squid_game.x` como definición de servicios inspirada en `rpcgen`.
-- Scripts `.bat` para Windows.
+- Demo concurrente con varios clientes.
+- Protocolo con encabezado, número de programa, versión, procedimiento y XID.
+- Serlización en orden de red.
+- Archivo `rpc_interface/squid_game.x` como definición de servicios.
+- Scripts para compilar y ejecutar en Windows.
 - Makefile para Linux, WSL o MSYS2.
-- Reporte editable en `report/report_draft.md`.
-- Evidencia de ejecución en `evidence/execution_demo.txt` y `screenshots/execution_demo.png`.
+- Evidenc de ejecución en `evidence/`.
+- Captura de ejecución en `screenshots/`.
 
 ## Requisitos
 
 ### Windows
 
-Instala GCC con MSYS2 MinGW o cualquier distribución que deje `gcc` disponible en `PATH`.
+Instalar un compilador compatible con GCC, por ejemplo MSYS2 MinGW, y asegurarse de que `gcc` esté disponible en el `PATH`.
 
-Comando recomendado para MSYS2 MinGW:
+En MSYS2 MinGW:
 
 ```bash
 pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-make
 ```
 
-En Windows puedes correr todo con doble clic:
+Para ejecutar el menú principal:
 
 ```bat
 RUN_PROJECT.bat
@@ -50,7 +50,7 @@ make all
 ./build/concurrent_demo
 ```
 
-## Modo manual
+## Ejecución manual
 
 Terminal 1:
 
@@ -70,13 +70,13 @@ Terminal 3:
 ./build/client 127.0.0.1 5050
 ```
 
-## Procedimientos remotos implementados
+## Procedimientos remotos
 
 - `JOIN_PLAYER`: registra un jugador.
 - `CHOOSE_BRIDGE`: selecciona puente 1, 2 o 3.
 - `MOVE_PLAYER`: mueve 1 o 2 pasos.
 - `GET_STATE`: obtiene el estado visible.
-- `RESET_GAME`: reinicia el juego para demos.
+- `RESET_GAME`: reinic el juego para demos.
 - `SHUTDOWN`: apaga el servidor local de demo.
 
 ## Reglas implementadas
@@ -85,19 +85,19 @@ Terminal 3:
 - Cada puente tiene N pasos.
 - Cada paso es fuerte o débil.
 - Los pasos son ocultos hasta que se prueban.
-- El jugador inicia en Side A.
-- El jugador escoge un puente y no puede cambiar.
-- Solo puede avanzar hacia adelante.
+- El jugador inic en Side A.
+- El jugador escoge un puente y no puede cambr.
+- Solo puede avanzar hac adelante.
 - Solo puede saltar 1 o 2 pasos.
 - Si pisa un paso débil, el paso se rompe y el jugador muere.
 - Si llega a Side B, vive y aumenta el contador global.
 - Si el reloj global se agota, los jugadores restantes mueren.
 - Si otro jugador está adelante en el mismo puente, el jugador debe esperar.
 
-## Diseño de concurrencia
+## Concurrenc
 
-El servidor acepta conexiones concurrentes. Cada solicitud se procesa en un hilo trabajador, pero las modificaciones al estado global se protegen con un mutex. Por eso el servidor puede recibir solicitudes simultáneas sin permitir que dos movimientos cambien el estado al mismo tiempo.
+El servidor acepta conexiones concurrentes. Cada solicitud se atiende en un hilo trabajador y las modificaciones al estado global se protegen con un mutex. De esta forma, varios clientes pueden envr solicitudes al mismo tiempo sin modificar el estado de forma inconsistente.
 
 ## Nota sobre RPC
 
-El proyecto no depende de `rpcgen` para ser más fácil de ejecutar en Windows con VSCode. Aun así, el diseño sigue el modelo de las guías: definición de servicios, stubs de cliente, dispatcher de servidor, runtime de comunicación, XID, serialización y llamadas remotas orientadas a procedimientos.
+El proyecto usa una implementación RPC prop sobre sockets TCP. La estructura mantiene la idea de servicios remotos, stubs de cliente, dispatcher del servidor, XID y serlización de datos.
