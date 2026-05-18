@@ -1,40 +1,40 @@
 # RPC Squid Game: The Glass Bridge
 
-Proyecto en C que implementa una simulación cliente-servidor con estilo RPC sobre sockets TCP. El cliente solicita procedimientos remotos y el servidor mantiene el estado principal del juego.
+This project implements the Glass Bridge challenge using a client-server RPC architecture over TCP sockets. Clients invoke remote procedures, while the server maintains the authoritative game state and validates every action.
 
-## Contenido
+## Contents
 
-- Servidor RPC.
-- Cliente interactivo.
-- Demo automática.
-- Demo concurrente con varios clientes.
-- Protocolo con encabezado, número de programa, versión, procedimiento y XID.
-- Serlización en orden de red.
-- Archivo `rpc_interface/squid_game.x` como definición de servicios.
-- Scripts para compilar y ejecutar en Windows.
-- Makefile para Linux, WSL o MSYS2.
-- Evidenc de ejecución en `evidence/`.
-- Captura de ejecución en `screenshots/`.
+- RPC server.
+- Interactive client.
+- Automatic demonstration.
+- Concurrent demonstration with multiple clients.
+- Protocol header with program number, version, procedure number, payload size, and transaction identifier.
+- Network-byte-order serialization.
+- Service definition file: `rpc_interface/squid_game.x`.
+- Windows build and execution scripts.
+- Makefile for Linux, WSL, or MSYS2.
+- Execution logs in `evidence/`.
+- Execution screenshot in `screenshots/`.
 
-## Requisitos
+## Requirements
 
 ### Windows
 
-Instalar un compilador compatible con GCC, por ejemplo MSYS2 MinGW, y asegurarse de que `gcc` esté disponible en el `PATH`.
+Install a GCC-compatible compiler, such as MSYS2 MinGW, and make sure `gcc` is available in the system `PATH`.
 
-En MSYS2 MinGW:
+Recommended MSYS2 MinGW package:
 
 ```bash
 pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-make
 ```
 
-Para ejecutar el menú principal:
+To open the main execution menu:
 
 ```bat
 RUN_PROJECT.bat
 ```
 
-Opciones directas:
+Direct execution options:
 
 ```bat
 RUN_AUTOMATIC_DEMO.bat
@@ -42,7 +42,7 @@ RUN_CONCURRENT_DEMO.bat
 RUN_MANUAL_GAME.bat
 ```
 
-### Linux, WSL o MSYS2
+### Linux, WSL, or MSYS2
 
 ```bash
 make all
@@ -50,7 +50,7 @@ make all
 ./build/concurrent_demo
 ```
 
-## Ejecución manual
+## Manual Execution
 
 Terminal 1:
 
@@ -70,34 +70,34 @@ Terminal 3:
 ./build/client 127.0.0.1 5050
 ```
 
-## Procedimientos remotos
+## Remote Procedures
 
-- `JOIN_PLAYER`: registra un jugador.
-- `CHOOSE_BRIDGE`: selecciona puente 1, 2 o 3.
-- `MOVE_PLAYER`: mueve 1 o 2 pasos.
-- `GET_STATE`: obtiene el estado visible.
-- `RESET_GAME`: reinic el juego para demos.
-- `SHUTDOWN`: apaga el servidor local de demo.
+- `JOIN_PLAYER`: registers a player.
+- `CHOOSE_BRIDGE`: selects bridge 1, 2, or 3.
+- `MOVE_PLAYER`: moves 1 or 2 steps forward.
+- `GET_STATE`: returns the visible game state.
+- `RESET_GAME`: restarts the game for demonstrations.
+- `SHUTDOWN`: shuts down the local demo server.
 
-## Reglas implementadas
+## Implemented Rules
 
-- Hay 3 puentes paralelos.
-- Cada puente tiene N pasos.
-- Cada paso es fuerte o débil.
-- Los pasos son ocultos hasta que se prueban.
-- El jugador inic en Side A.
-- El jugador escoge un puente y no puede cambr.
-- Solo puede avanzar hac adelante.
-- Solo puede saltar 1 o 2 pasos.
-- Si pisa un paso débil, el paso se rompe y el jugador muere.
-- Si llega a Side B, vive y aumenta el contador global.
-- Si el reloj global se agota, los jugadores restantes mueren.
-- Si otro jugador está adelante en el mismo puente, el jugador debe esperar.
+- The game has 3 parallel bridges.
+- Each bridge has N steps.
+- Each step is either strong or weak.
+- Step types remain hidden until tested.
+- Each player starts on Side A.
+- Each player chooses one bridge and cannot switch bridges afterward.
+- Players can only move forward.
+- Players can jump 1 or 2 steps.
+- If a player lands on a weak step, the step breaks and the player dies.
+- If a player reaches Side B, the player survives and the global survivor counter increases.
+- If the global clock runs out, all remaining players on the bridges die.
+- If another player is ahead on the same bridge, the player must wait.
 
-## Concurrenc
+## Concurrency
 
-El servidor acepta conexiones concurrentes. Cada solicitud se atiende en un hilo trabajador y las modificaciones al estado global se protegen con un mutex. De esta forma, varios clientes pueden envr solicitudes al mismo tiempo sin modificar el estado de forma inconsistente.
+The server accepts concurrent connections. Each request is processed by a worker thread, and all modifications to the shared game state are protected by a mutex. This prevents inconsistent updates when multiple clients send requests at the same time.
 
-## Nota sobre RPC
+## RPC Design Note
 
-El proyecto usa una implementación RPC prop sobre sockets TCP. La estructura mantiene la idea de servicios remotos, stubs de cliente, dispatcher del servidor, XID y serlización de datos.
+The project uses a custom RPC implementation over TCP sockets. The structure follows the core RPC model: service definitions, client-side stubs, a server-side dispatcher, transaction identifiers, and serialized request/response payloads.
